@@ -1,17 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name = "author" description = "Azrielle">
-    <meta name = "content" description = "A simple weather application">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" description="Azrielle" />
+    <meta name="content" description="A simple weather application" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <link rel = "stylesheet" href = "style.css">
-    <script src = "index.js" defer></script>
-    <title>Nimbus - A Weather App</title>
-</head>
-<body>
-    <input type = 'text' name = 'searchCity' id = 'searchCity' placeholder = "Enter name of city">
-    
-</body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="css/pe-icon-7-weather/css/pe-icon-7-weather.css"
+    />
+    <script src="index.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/238576f8e6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Nimbus - Weather App</title>
+  </head>
+  <body>
+    <div class="parentContainer">
+      <div class="childContainer">
+        <div class="inputContainer">
+          <input
+            type="text"
+            name="searchCity"
+            id="searchCity"
+            placeholder="Search city"
+          />
+          <input type="checkbox" name="toggleImperial" id="toggleImperial" />
+          <label for="toggleImperial">&deg;F</label>
+        </div>
+        <div class="mainWeatherDetails">
+          <p class="cityAndCountry"></p>
+          <div class="iconAndTempContainer">
+            <div class="weatherIcon"></div>
+            <p class="weatherTemp"></p>
+            <p class="minAndMaxTemp"></p>
+            <p class="feelsLikeTemp"></p>
+          </div>
+          <p class="weatherDescription"></p>
+        </div>
+        <div class="otherWeatherDetails">
+          <div class="sunContainer">
+            <div class="sunriseContainer">
+              <i class="pe-7w-sunrise"></i>
+              <p class="sunriseTime"></p>
+            </div>
+            <div class="sunsetContainer">
+              <i class="pe-7w-sunset"></i>
+              <p class="sunsetTime"></p>
+            </div>
+          </div>
+          <div class="miscContainer">
+              <div class="labels">
+                  <p>Humidity</p>
+                  <p>Wind Speed</p>
+                  <p>Pressure</p>
+              </div>
+              <div class="values">
+                  <p class="humidityValue"></p>
+                  <p class="windSpeedValue"></p>
+                  <p class="pressureValue"></p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>2020 | Azrielle</p>
+      <p>Powered By OpenWeatherMap.org</p>
+    </footer>
+  </body>
 </html>
