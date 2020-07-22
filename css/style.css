@@ -17,6 +17,19 @@ body {
   width: 100vw;
 }
 
+.subContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.subContainer svg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% + 5vh);
+}
+
 .inputContainer {
   display: flex;
   align-items: center;
@@ -30,12 +43,15 @@ body {
   color: #eae2b7;
 }
 .inputContainer .searchContainer input[type=text] {
+  width: 60vw;
   padding: 0.5em 1em 0.5em 2.5em;
   margin: 0.5em;
   outline: none;
   border: none;
   border-bottom: 0.5px solid #eae2b7;
   background: none;
+  color: #eae2b7;
+  font: lighter 0.8em "Roboto", sans-serif;
 }
 .inputContainer .searchContainer ::placeholder,
 .inputContainer .searchContainer :-ms-input-placeholder,
@@ -51,62 +67,119 @@ body {
   opacity: 0;
 }
 .inputContainer label {
-  font: lighter 2em "Roboto", sans-serif;
+  margin-left: 0.5em;
+  font: lighter 1.5em "Roboto", sans-serif;
   color: #eae2b7;
+  opacity: 0.8;
 }
 
 .mainWeatherDetails {
   margin-bottom: 2em;
 }
 .mainWeatherDetails .cityAndCountry {
-  font: 7vw "Roboto", sans-serif;
+  font: 1.8em "Roboto", sans-serif;
   color: #fcbf49;
 }
 .mainWeatherDetails .weatherDescription {
-  font: bolder 5vw "Lato", sans-serif;
+  font: bolder 1em "Lato", sans-serif;
   color: #f77f00;
 }
 .mainWeatherDetails .iconAndTempContainer {
   display: grid;
   grid-template: 7em 3em/repeat(2, 1fr);
-  justify-items: center;
   align-items: center;
   row-gap: 0.5em;
+  column-gap: 1em;
   padding: 1.5em;
 }
-.mainWeatherDetails .iconAndTempContainer i {
-  font-size: 32vw;
+.mainWeatherDetails .iconAndTempContainer .weatherIcon {
+  justify-self: right;
+  font-size: 6em;
   color: #ffffff;
 }
 .mainWeatherDetails .iconAndTempContainer .weatherTemp {
-  font: 32vw "Roboto", sans-serif;
+  font: 6em "Roboto", sans-serif;
   color: #fcbf49;
 }
 .mainWeatherDetails .iconAndTempContainer .minAndMaxTemp {
-  font: lighter 7vw "Roboto", sans-serif;
+  justify-self: right;
+  font: lighter 1.5em "Roboto", sans-serif;
   color: #d62828;
 }
 .mainWeatherDetails .iconAndTempContainer .feelsLikeTemp {
-  font: lighter 7vw "Lato", sans-serif;
+  font: lighter 1.5em "Lato", sans-serif;
+  color: #eae2b7;
+}
+
+.otherWeatherDetails {
+  margin-top: 1em;
+  padding: 1em;
+}
+.otherWeatherDetails .sunContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.otherWeatherDetails .sunriseContainer,
+.otherWeatherDetails .sunsetContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.otherWeatherDetails .sunriseContainer i,
+.otherWeatherDetails .sunsetContainer i {
+  margin: 0.3em;
+  color: #f77f00;
+  font-size: 3em;
+}
+.otherWeatherDetails .sunriseContainer p,
+.otherWeatherDetails .sunsetContainer p {
+  margin-left: 0.5em;
+  font: bolder 1em "Lato", sans-serif;
+  color: #003049;
+}
+.otherWeatherDetails .miscContainer {
+  display: flex;
+  justify-content: center;
+}
+.otherWeatherDetails .miscContainer .labels,
+.otherWeatherDetails .miscContainer .values {
+  font: bolder 1em "Lato", sans-serif;
+}
+.otherWeatherDetails .miscContainer .labels p,
+.otherWeatherDetails .miscContainer .values p {
+  margin: 0.5em;
+}
+.otherWeatherDetails .miscContainer .labels {
+  color: #003049;
+}
+.otherWeatherDetails .miscContainer .labels p {
+  text-align: right;
+}
+.otherWeatherDetails .miscContainer .values {
+  color: #d62828;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer p {
+  font: lighter 0.8em "Lato", sans-serif;
   color: #eae2b7;
 }
 
 @media screen and (max-width: 480px) {
   .childContainer {
-    height: 100vh;
-    width: 100vw;
+    width: inherit;
     display: flex;
     flex-flow: column;
-  }
-
-  .subContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .subContainer svg {
-    position: relative;
-    z-index: -1;
   }
 
   .mainWeatherDetails .cityAndCountry,
