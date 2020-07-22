@@ -12,11 +12,6 @@ body {
   padding: 0;
 }
 
-.parentContainer {
-  height: 100vh;
-  width: 100vw;
-}
-
 .subContainer {
   position: relative;
   top: 0;
@@ -29,12 +24,16 @@ body {
   width: 100%;
   height: calc(100% + 5vh);
 }
+.subContainer .large-svg {
+  display: none;
+}
 
 .inputContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 1em;
+  opacity: 0.6;
 }
 .inputContainer .searchContainer i {
   position: absolute;
@@ -112,7 +111,7 @@ body {
 }
 
 .otherWeatherDetails {
-  margin-top: 1em;
+  margin: 1em 0;
   padding: 1em;
 }
 .otherWeatherDetails .sunContainer {
@@ -161,11 +160,9 @@ body {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100vw;
   padding: 0.5em;
+  margin-top: 1em;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -175,7 +172,12 @@ footer p {
   color: #eae2b7;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
+  .parentContainer {
+    height: 100vh;
+    width: 100vw;
+  }
+
   .childContainer {
     width: inherit;
     display: flex;
@@ -186,6 +188,123 @@ footer p {
 .mainWeatherDetails .weatherDescription {
     text-align: center;
   }
+
+  footer {
+    position: relative;
+    bottom: 0;
+  }
+}
+@media screen and (min-width: 769px) {
+  body {
+    height: 100vh;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e8e2c7+0,efb37a+100 */
+background: #e8e2c7; /* Old browsers */
+background: -moz-linear-gradient(top,  #e8e2c7 0%, #efb37a 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #e8e2c7 0%,#efb37a 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #e8e2c7 0%,#efb37a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e2c7', endColorstr='#efb37a',GradientType=0 ); /* IE6-9 */
+
+  }
+
+  .parentContainer {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .childContainer {
+    width: 80%;
+    height: 100%;
+    margin: 3em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background-color: #ffffff;
+    z-index: 0;
+  }
+
+  .inputContainer {
+    justify-content: flex-end;
+    padding: 1.5em;
+    margin: 0;
+  }
+  .inputContainer .searchContainer input[type=text] {
+    width: 25vw;
+  }
+
+  .subContainer svg {
+    height: calc(100% + 8vw);
+  }
+  .subContainer .small-svg {
+    display: none;
+  }
+  .subContainer .large-svg {
+    display: block;
+  }
+
+  .mainWeatherDetails {
+    display: grid;
+    grid-template: 4em 8em/16em 1fr;
+    column-gap: 1em;
+    padding: 1em 2em 0 2em;
+  }
+  .mainWeatherDetails .cityAndCountry {
+    grid-area: 1/1/2/2;
+    font-size: 2em;
+  }
+  .mainWeatherDetails .weatherDescription {
+    grid-area: 2/1/3/2;
+    justify-self: center;
+    font-size: 1.5em;
+  }
+  .mainWeatherDetails .iconAndTempContainer {
+    grid-area: 1/2/3/3;
+    justify-self: right;
+    padding: 0;
+    height: 100%;
+    grid-template: 8em 4em/repeat(2, 1fr);
+  }
+  .mainWeatherDetails .iconAndTempContainer .weatherIcon,
+.mainWeatherDetails .iconAndTempContainer .weatherTemp {
+    font-size: 8em;
+  }
+  .mainWeatherDetails .iconAndTempContainer .minAndMaxTemp,
+.mainWeatherDetails .iconAndTempContainer .feelsLikeTemp {
+    font-size: 1.8em;
+  }
+
+  .otherWeatherDetails {
+    margin: 0;
+    padding: 0 2em 2em 2em;
+    display: flex;
+    align-items: flex-start;
+  }
+  .otherWeatherDetails .sunContainer {
+    flex-flow: column;
+    margin-right: 3em;
+  }
+  .otherWeatherDetails .sunContainer .sunriseContainer i,
+.otherWeatherDetails .sunContainer .sunsetContainer i {
+    font-size: 3em;
+    margin: 0;
+  }
+  .otherWeatherDetails .sunContainer .sunriseContainer p,
+.otherWeatherDetails .sunContainer .sunsetContainer p {
+    font-size: 1.5em;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
 }
 
+@media screen and (min-width: 1025px) {
+  .childContainer {
+    width: 70%;
+  }
+  .mainWeatherDetails {
+    padding: 1em 10vw 0 10vw;
+  }
+}
 /*# sourceMappingURL=style.css.map */
