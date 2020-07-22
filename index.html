@@ -13,7 +13,10 @@
       rel="stylesheet"
       href="css/pe-icon-7-weather/css/pe-icon-7-weather.css"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- JavaScript -->
     <script src="main.js" defer></script>
@@ -27,48 +30,59 @@
   <body>
     <div class="parentContainer">
       <div class="childContainer">
-        <div class="inputContainer">
-          <input
-            type="text"
-            name="searchCity"
-            id="searchCity"
-            placeholder="Search city"
-          />
-          <input type="checkbox" name="toggleImperial" id="toggleImperial" />
-          <label for="toggleImperial">&deg;F</label>
-        </div>
-        <div class="mainWeatherDetails">
-          <p class="cityAndCountry"></p>
-          <div class="iconAndTempContainer">
-            <div class="weatherIcon"></div>
-            <p class="weatherTemp"></p>
-            <p class="minAndMaxTemp"></p>
-            <p class="feelsLikeTemp"></p>
+        <div class="subContainer">
+          <svg width="100%" height="100%" viewBox="0 0 320 406" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.52588e-05 0H320C320 0 320 231.887 320 363.299C320 494.712 1.3636e-05 269.802 2.28882e-05 386.97C3.21404e-05 504.139 1.52588e-05 0 1.52588e-05 0Z" fill="#003049"/>
+            </svg>
           </div>
-          <p class="weatherDescription"></p>
-        </div>
+          <div class="inputContainer">
+            <div class="searchContainer">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                name="searchCity"
+                id="searchCity"
+                placeholder="Search city"
+              />
+            </div>
+            <label for="toggleImperial" class="checkImperial">&deg;F</label>
+            <input type="checkbox" name="toggleImperial" id="toggleImperial" />
+          </div>
+          <div class="mainWeatherDetails">
+            <p class="cityAndCountry">Baguio City, PH</p>
+            <div class="iconAndTempContainer">
+              <div class="weatherIcon">
+                <i class="pe-7w-rain-alt pe-5x"></i>
+              </div>
+              <p class="weatherTemp">18&deg;</p>
+              <p class="minAndMaxTemp">24&deg; | 16&deg;</p>
+              <p class="feelsLikeTemp">Feels like 17&deg;</p>
+            </div>
+            <p class="weatherDescription">Light Intensity Drizzle Rain</p>
+          </div>
+        
         <div class="otherWeatherDetails">
           <div class="sunContainer">
             <div class="sunriseContainer">
               <i class="pe-7w-sunrise"></i>
-              <p class="sunriseTime"></p>
+              <p class="sunriseTime">6:10 AM</p>
             </div>
             <div class="sunsetContainer">
               <i class="pe-7w-sunset"></i>
-              <p class="sunsetTime"></p>
+              <p class="sunsetTime">6:50 PM</p>
             </div>
           </div>
           <div class="miscContainer">
-              <div class="labels">
-                  <p>Humidity</p>
-                  <p>Wind Speed</p>
-                  <p>Pressure</p>
-              </div>
-              <div class="values">
-                  <p class="humidityValue"></p>
-                  <p class="windSpeedValue"></p>
-                  <p class="pressureValue"></p>
-              </div>
+            <div class="labels">
+              <p>Humidity</p>
+              <p>Wind Speed</p>
+              <p>Pressure</p>
+            </div>
+            <div class="values">
+              <p class="humidityValue">80%</p>
+              <p class="windSpeedValue">2 kph</p>
+              <p class="pressureValue">1026 hPa</p>
+            </div>
           </div>
         </div>
       </div>

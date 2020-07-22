@@ -1,0 +1,127 @@
+$blue: #003049;
+$intense-orange: #f77f00;
+$orange: #fcbf49;
+$light-orange: #eae2b7;
+$red: #d62828;
+
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Lato', sans-serif;
+
+/* ==== Universal Styling ==== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.parentContainer {
+  height: 100vh;
+  width: 100vw;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  .searchContainer {
+    i {
+      position: absolute;
+      padding: 12px;
+      min-width: 40px;
+      color: $light-orange;
+    }
+    input[type='text'] {
+      padding: 0.5em 1em 0.5em 2.5em;
+      margin: 0.5em;
+      outline: none;
+      border: none;
+      border-bottom: 0.5px solid $light-orange;
+      background: none;
+    }
+    ::placeholder,
+    :-ms-input-placeholder,
+    ::-ms-input-placeholder {
+      color: $light-orange;
+      opacity: 0.7;
+      font-weight: lighter;
+      font-size: 0.5em;
+    }
+  }
+  input[type='checkbox'] {
+    position: absolute;
+    left: -100vw;
+    opacity: 0;
+  }
+  label {
+    font: lighter 2em $primary-font;
+    color: $light-orange;
+  }
+}
+
+.mainWeatherDetails {
+  margin-bottom: 2em;
+  .cityAndCountry {
+    font: 7vw $primary-font;
+    color: $orange;
+  }
+  .weatherDescription {
+    font: bolder 5vw $secondary-font;
+    color: $intense-orange;
+  }
+  .iconAndTempContainer {
+    display: grid;
+    grid-template: 7em 3em / repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    row-gap: 0.5em;
+    padding: 1.5em;
+    i {
+      font-size: 32vw;
+      color: #ffffff;
+    }
+    .weatherTemp {
+      font: 32vw $primary-font;
+      color: $orange;
+    }
+    .minAndMaxTemp {
+      font: lighter 7vw $primary-font;
+      color: $red;
+    }
+    .feelsLikeTemp {
+      font: lighter 7vw $secondary-font;
+      color: $light-orange;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .childContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-flow: column;
+  }
+  .subContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    svg {
+      position: relative;
+      z-index: -1;
+    }
+  }
+  .mainWeatherDetails {
+    .cityAndCountry,
+    .weatherDescription {
+      text-align: center;
+    }
+  }
+}
