@@ -74,6 +74,10 @@ body {
 
 .mainWeatherDetails {
   margin-bottom: 2em;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
 .mainWeatherDetails .cityAndCountry {
   font: 1.8em "Roboto", sans-serif;
@@ -93,8 +97,10 @@ body {
 }
 .mainWeatherDetails .iconAndTempContainer .weatherIcon {
   justify-self: right;
-  font-size: 6em;
   color: #ffffff;
+}
+.mainWeatherDetails .iconAndTempContainer .weatherIcon i {
+  font-size: 8.5em;
 }
 .mainWeatherDetails .iconAndTempContainer .weatherTemp {
   font: 6em "Roboto", sans-serif;
@@ -197,13 +203,17 @@ footer p {
 @media screen and (min-width: 769px) {
   body {
     height: 100vh;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e8e2c7+0,efb37a+100 */
-background: #e8e2c7; /* Old browsers */
-background: -moz-linear-gradient(top,  #e8e2c7 0%, #efb37a 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #e8e2c7 0%,#efb37a 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #e8e2c7 0%,#efb37a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e2c7', endColorstr='#efb37a',GradientType=0 ); /* IE6-9 */
-
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eae2b7+0,f2b374+100 */
+    background: #eae2b7;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #eae2b7 0%, #f2b374 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #eae2b7 0%, #f2b374 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #eae2b7 0%, #f2b374 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#eae2b7", endColorstr="#f2b374",GradientType=0 );
+    /* IE6-9 */
   }
 
   .parentContainer {
@@ -214,9 +224,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e2c7', end
   }
 
   .childContainer {
-    width: 80%;
+    max-width: 80%;
     height: 100%;
-    margin: 3em;
+    margin: 1em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     background-color: #ffffff;
@@ -225,7 +235,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e2c7', end
 
   .inputContainer {
     justify-content: flex-end;
-    padding: 1.5em;
+    padding: 1em;
     margin: 0;
   }
   .inputContainer .searchContainer input[type=text] {
@@ -246,7 +256,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e2c7', end
     display: grid;
     grid-template: 4em 8em/16em 1fr;
     column-gap: 1em;
-    padding: 1em 2em 0 2em;
+    padding: 1em 4vw 0 4vw;
   }
   .mainWeatherDetails .cityAndCountry {
     grid-area: 1/1/2/2;
@@ -264,8 +274,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e2c7', end
     height: 100%;
     grid-template: 8em 4em/repeat(2, 1fr);
   }
-  .mainWeatherDetails .iconAndTempContainer .weatherIcon,
-.mainWeatherDetails .iconAndTempContainer .weatherTemp {
+  .mainWeatherDetails .iconAndTempContainer .weatherIcon i {
+    font-size: 8em;
+  }
+  .mainWeatherDetails .iconAndTempContainer .weatherTemp {
     font-size: 8em;
   }
   .mainWeatherDetails .iconAndTempContainer .minAndMaxTemp,
@@ -298,13 +310,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e2c7', end
     bottom: 0;
   }
 }
-
 @media screen and (min-width: 1025px) {
-  .childContainer {
-    width: 70%;
-  }
-  .mainWeatherDetails {
-    padding: 1em 10vw 0 10vw;
+  .subContainer svg {
+    height: 382px;
   }
 }
+
 /*# sourceMappingURL=style.css.map */
