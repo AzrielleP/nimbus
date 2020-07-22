@@ -26,6 +26,19 @@ body {
   width: 100vw;
 }
 
+.subContainer {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    svg {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: calc(100% + 5vh);
+    }
+  }
+
 .inputContainer {
   display: flex;
   align-items: center;
@@ -39,12 +52,15 @@ body {
       color: $light-orange;
     }
     input[type='text'] {
+    width: 60vw;
       padding: 0.5em 1em 0.5em 2.5em;
       margin: 0.5em;
       outline: none;
       border: none;
       border-bottom: 0.5px solid $light-orange;
       background: none;
+      color: $light-orange;
+      font: lighter 0.8em $primary-font;
     }
     ::placeholder,
     :-ms-input-placeholder,
@@ -61,63 +77,122 @@ body {
     opacity: 0;
   }
   label {
-    font: lighter 2em $primary-font;
+      margin-left: 0.5em;
+    font: lighter 1.5em $primary-font;
     color: $light-orange;
+    opacity: 0.8;
   }
 }
 
 .mainWeatherDetails {
   margin-bottom: 2em;
   .cityAndCountry {
-    font: 7vw $primary-font;
+    font: 1.8em $primary-font;
     color: $orange;
   }
   .weatherDescription {
-    font: bolder 5vw $secondary-font;
+    font: bolder 1em $secondary-font;
     color: $intense-orange;
   }
   .iconAndTempContainer {
     display: grid;
     grid-template: 7em 3em / repeat(2, 1fr);
-    justify-items: center;
     align-items: center;
     row-gap: 0.5em;
+    column-gap: 1em;
     padding: 1.5em;
-    i {
-      font-size: 32vw;
+    .weatherIcon {
+        justify-self: right;
+        font-size: 6em;
       color: #ffffff;
     }
     .weatherTemp {
-      font: 32vw $primary-font;
+      font: 6em $primary-font;
       color: $orange;
+      
     }
     .minAndMaxTemp {
-      font: lighter 7vw $primary-font;
+      justify-self: right;
+      font: lighter 1.5em $primary-font;
       color: $red;
     }
     .feelsLikeTemp {
-      font: lighter 7vw $secondary-font;
+      font: lighter 1.5em $secondary-font;
       color: $light-orange;
     }
   }
 }
 
+.otherWeatherDetails {
+    margin-top: 1em;
+    padding: 1em;
+    .sunContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sunriseContainer,
+    .sunsetContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        i {
+            margin: 0.3em;
+            color: $intense-orange;
+            font-size: 3em;
+        }
+        p {
+            margin-left: 0.5em;
+            font: bolder 1em $secondary-font;
+            color: $blue;
+            
+        }
+    }
+    .miscContainer {
+        display: flex;
+        justify-content: center;
+        .labels,
+        .values {
+            font: bolder 1em $secondary-font;
+            p {
+                margin: 0.5em;
+            }
+        }
+        .labels {
+            color: $blue;
+            p {
+                text-align: right;
+            }
+        }
+        .values {
+            color: $red;
+        }
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+        font: lighter 0.8em $secondary-font;
+        color: $light-orange;
+    }
+}
+
 @media screen and (max-width: 480px) {
   .childContainer {
-    height: 100vh;
-    width: 100vw;
+    width: inherit;
     display: flex;
     flex-flow: column;
   }
-  .subContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    svg {
-      position: relative;
-      z-index: -1;
-    }
-  }
+ 
   .mainWeatherDetails {
     .cityAndCountry,
     .weatherDescription {
