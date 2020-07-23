@@ -339,7 +339,7 @@ footer {
 @media screen and (min-width: 1025px) {
   .subContainer {
     svg {
-      height: 355px;
+      height: calc(100% + 5em);
     }
   }
 }

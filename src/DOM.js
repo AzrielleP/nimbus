@@ -32,12 +32,6 @@ const dom = (() => {
     errorMessage.textContent = 'Location not found.';
   };
 
-  const displayErrorDisplayingData = () => {
-    errorMessage.style.display = 'block';
-    errorMessage.textContent =
-      'Oops! There was an error loading the data. Try again.';
-  };
-
   const hideErrorMessage = () => {
     errorMessage.style.display = 'none';
   };
@@ -56,7 +50,7 @@ const dom = (() => {
       pressure.textContent = `${data.pressure} hPa`;
       weatherStatusIcon.className = assignWeatherIcon(data.id);
     } catch (err) {
-      displayErrorDisplayingData();
+      displayErrorLocation();
     }
   };
 
