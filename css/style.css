@@ -50,7 +50,7 @@ body {
   color: #eae2b7;
 }
 .inputContainer .searchContainer input[type=search] {
-  width: 60vw;
+  width: 80%;
   padding: 0.5em 1em 0.5em 2.5em;
   margin: 0.5em;
   outline: none;
@@ -143,6 +143,7 @@ body {
 .otherWeatherDetails .miscContainer {
   display: flex;
   justify-content: center;
+  padding: 0.5em;
 }
 .otherWeatherDetails .miscContainer .labels,
 .otherWeatherDetails .miscContainer .values {
@@ -242,9 +243,6 @@ footer p {
     justify-content: flex-end;
     padding: 1em;
     margin: 0;
-  }
-  .inputContainer .searchContainer input[type=text] {
-    width: 25vw;
   }
 
   .subContainer svg {
