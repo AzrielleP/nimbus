@@ -2,15 +2,14 @@ import { dom } from './DOM';
 
 const getData = (() => {
   const cityName = document.querySelector('input');
-  const farenheit = document.querySelector('.checkImperial');
-  const farenheitToggler = document.querySelector('#toggleImperial');
 
   const getWeatherData = async (city, unit) => {
     try {
       const data = await fetch(
         'http://api.openweathermap.org/data/2.5/weather?q=' +
-          city.value +
-          '&appid=b0c97e77b0085b10b9618c2ccfbe43e8&units=' + unit,
+          city +
+          '&appid=b0c97e77b0085b10b9618c2ccfbe43e8&units=' +
+          unit,
         {
           mode: 'cors',
         }
@@ -28,13 +27,12 @@ const getData = (() => {
       const gatheredData = await data;
       const weatherData = {};
 
-      weatherData.weatherDescription = gatheredData.weather[0].main;
+      weatherData.id = gatheredData.weather[0].id;
+      weatherData.weatherDescription = gatheredData.weather[0].description;
       weatherData.temp = Math.round(gatheredData.main.temp);
       weatherData.feelsLike = Math.round(gatheredData.main.feels_like);
       weatherData.pressure = gatheredData.main.pressure;
       weatherData.humidity = gatheredData.main.humidity;
-      weatherData.minTemp = Math.round(gatheredData.main.temp_min);
-      weatherData.maxTemp = Math.round(gatheredData.main.temp_max);
       weatherData.windSpeed = gatheredData.wind.speed;
       weatherData.country = gatheredData.sys.country;
       weatherData.city = gatheredData.name;
@@ -48,6 +46,12 @@ const getData = (() => {
     }
   };
 
+  const checkMinMaxTemp = (min, max) => {
+    if (min === max) {
+
+    }
+  }
+
   const convertTimeToDate = (time) => {
     const timeInSeconds = new Date(time * 1000);
     return timeInSeconds.toLocaleTimeString([], {
@@ -56,28 +60,12 @@ const getData = (() => {
     });
   };
 
-  const getUserInputUnit = () => {
-      let unit = null;
-      farenheit.addEventListener('click', () => {
-        if (farenheitToggler.checked) {
-            unit = 'imperial';
-            dom.changeToFarenheit();
-            
-        }
-        else {
-            unit = 'metric';
-            dom.changeToCelsius();
-        }
-        let weatherData = processWeatherData(getWeatherData(cityName, unit));
-        dom.displayData(weatherData);
-      })
-      return unit;
-  }
-
   const getUserInputCity = () => {
     cityName.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
-        let weatherData = processWeatherData(getWeatherData(cityName, 'metric'));
+        let weatherData = processWeatherData(
+          getWeatherData(cityName.value, 'metric')
+        );
         cityName.value = '';
         dom.displayData(weatherData);
       }
@@ -86,7 +74,6 @@ const getData = (() => {
 
   return {
     getUserInputCity,
-    getUserInputUnit
   };
 })();
 
