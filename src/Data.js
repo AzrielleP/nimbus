@@ -1,27 +1,39 @@
-import { dom } from './DOM';
+/* eslint-disable linebreak-style */
+/* eslint-disable comma-dangle */
+import dom from './DOM';
 
 const getData = (() => {
   const cityName = document.querySelector('input');
 
+  // Get the data from the API
   const getWeatherData = async (city, unit) => {
     try {
       const data = await fetch(
-        'https://api.openweathermap.org/data/2.5/weather?q=' +
-          city +
-          '&appid=b0c97e77b0085b10b9618c2ccfbe43e8&units=' +
-          unit,
+        `https://api.openweathermap.org/data/2.5/weather?q=${
+          city
+        }&appid=b0c97e77b0085b10b9618c2ccfbe43e8&units=${
+          unit}`,
         {
           mode: 'cors',
-        }
+        },
       );
       const loadData = await data.json();
-      console.log(loadData);
       return loadData;
     } catch (err) {
       dom.displayErrorLocation();
     }
   };
 
+  // The default time from the API is in ms. Convert it to a readable time (e.g. 7:20 AM)
+  const convertTimeToDate = (time) => {
+    const timeInSeconds = new Date(time * 1000);
+    return timeInSeconds.toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  };
+
+  // Filter out the data that we only need from the API
   const processWeatherData = async (data) => {
     try {
       const gatheredData = await data;
@@ -38,33 +50,27 @@ const getData = (() => {
       weatherData.city = gatheredData.name;
       weatherData.sunrise = convertTimeToDate(gatheredData.sys.sunrise);
       weatherData.sunset = convertTimeToDate(gatheredData.sys.sunset);
-
-      console.log(weatherData);
       return weatherData;
     } catch (err) {
       dom.displayErrorLocation();
     }
   };
 
-  const convertTimeToDate = (time) => {
-    const timeInSeconds = new Date(time * 1000);
-    return timeInSeconds.toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-  };
-
+  // When the webpage loads, use this City to be displayed.
   const onLoad = () => {
-    let weatherData = processWeatherData(getWeatherData('Baguio City', 'metric'));
+    const weatherData = processWeatherData(
+      getWeatherData('Baguio City', 'metric')
+    );
     dom.displayData(weatherData);
-  }
+  };
 
   const getUserInputCity = () => {
     cityName.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
-        let weatherData = processWeatherData(
+        const weatherData = processWeatherData(
           getWeatherData(cityName.value, 'metric')
         );
+        cityName.value = '';
         dom.hideErrorMessage();
         dom.displayData(weatherData);
       }

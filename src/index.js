@@ -1,4 +1,4 @@
 import getData from './Data';
 
 getData.getUserInputCity();
-window.onload = (getData.onLoad());
+window.onload = getData.onLoad();
