@@ -4,16 +4,25 @@ const getData = (() => {
   const cityName = document.querySelector('input');
 
   const getWeatherData = async (city, unit) => {
-    try {
-      const data = await fetch(
+    let site = null;
+    if (location.protocol === 'http') {
+      site =
         'http://api.openweathermap.org/data/2.5/weather?q=' +
-          city +
-          '&appid=b0c97e77b0085b10b9618c2ccfbe43e8&units=' +
-          unit,
-        {
-          mode: 'cors',
-        }
-      );
+        city +
+        '&appid=b0c97e77b0085b10b9618c2ccfbe43e8&units=' +
+        unit;
+    } else {
+      site =
+        'https://api.openweathermap.org/data/2.5/weather?q=' +
+        city +
+        '&appid=b0c97e77b0085b10b9618c2ccfbe43e8&units=' +
+        unit;
+    }
+
+    try {
+      const data = await fetch(site, {
+        mode: 'cors',
+      });
       const loadData = await data.json();
       console.log(loadData);
       return loadData;
