@@ -35,6 +35,15 @@ body {
   margin: 1em;
   opacity: 0.6;
 }
+.inputContainer p {
+  display: none;
+  margin: 0.5em;
+  padding: 0.5em;
+  background-color: #d62828;
+  border-radius: 5px;
+  color: #eae2b7;
+  font: lighter 0.8em "Roboto", sans-serif;
+}
 .inputContainer .searchContainer i {
   position: absolute;
   padding: 12px;
@@ -160,7 +169,7 @@ footer {
   margin-top: 1em;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 footer p {
   font: lighter 0.8em "Lato", sans-serif;
@@ -177,6 +186,10 @@ footer p {
     width: inherit;
     display: flex;
     flex-flow: column;
+  }
+
+  .inputContainer {
+    flex-flow: column-reverse;
   }
 
   .mainWeatherDetails .cityAndCountry,
@@ -269,8 +282,7 @@ footer p {
   .mainWeatherDetails .iconAndTempContainer .weatherTemp {
     font-size: 8em;
   }
-  .mainWeatherDetails .iconAndTempContainer .minAndMaxTemp,
-.mainWeatherDetails .iconAndTempContainer .feelsLikeTemp {
+  .mainWeatherDetails .iconAndTempContainer .feelsLikeTemp {
     font-size: 1.8em;
   }
 
