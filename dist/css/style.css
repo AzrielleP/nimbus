@@ -16,7 +16,6 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  height: 100%;
 }
 .subContainer svg {
   position: absolute;
@@ -204,6 +203,10 @@ footer p {
 }
 @media screen and (min-width: 769px) {
   body {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eae2b7+0,f2b374+100 */
     background: #eae2b7;
@@ -313,7 +316,7 @@ footer p {
 }
 @media screen and (min-width: 1025px) {
   .subContainer svg {
-    height: 382px;
+    height: 355px;
   }
 }
 
