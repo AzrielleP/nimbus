@@ -59,7 +59,7 @@ body {
       color: $light-orange;
     }
     input[type='search'] {
-      width: 60vw;
+      width: 80%;
       padding: 0.5em 1em 0.5em 2.5em;
       margin: 0.5em;
       outline: none;
@@ -152,6 +152,7 @@ body {
   .miscContainer {
     display: flex;
     justify-content: center;
+    padding: 0.5em;
     .labels,
     .values {
       font: bolder 1em $secondary-font;
@@ -261,11 +262,6 @@ footer {
     justify-content: flex-end;
     padding: 1em;
     margin: 0;
-    .searchContainer {
-      input[type='text'] {
-        width: 25vw;
-      }
-    }
   }
 
   .subContainer {
