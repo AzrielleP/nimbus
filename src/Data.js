@@ -18,7 +18,7 @@ const getData = (() => {
       console.log(loadData);
       return loadData;
     } catch (err) {
-      console.error('Error getting data');
+      dom.displayErrorLocation();
     }
   };
 
@@ -42,15 +42,9 @@ const getData = (() => {
       console.log(weatherData);
       return weatherData;
     } catch (err) {
-      console.error('Error processing data');
+      dom.displayErrorLocation();
     }
   };
-
-  const checkMinMaxTemp = (min, max) => {
-    if (min === max) {
-
-    }
-  }
 
   const convertTimeToDate = (time) => {
     const timeInSeconds = new Date(time * 1000);
@@ -66,7 +60,7 @@ const getData = (() => {
         let weatherData = processWeatherData(
           getWeatherData(cityName.value, 'metric')
         );
-        cityName.value = '';
+        dom.hideErrorMessage();
         dom.displayData(weatherData);
       }
     });

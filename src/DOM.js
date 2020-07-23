@@ -1,7 +1,7 @@
 const dom = (() => {
     
     // Get HTML Elements
-    
+    const errorMessage = document.querySelector('.errorMessage');
     const cityAndCountry = document.querySelector('.cityAndCountry');
     const weatherStatusIcon = document.querySelector('#weatherStatusIcon');
     const weatherTemp = document.querySelector('.weatherTemp');
@@ -39,8 +39,19 @@ const dom = (() => {
         weatherStatusIcon.className = assignWeatherIcon(data.id);
     }
 
+    const displayErrorLocation = () => {
+        errorMessage.style.display = 'block';
+        errorMessage.textContent = 'Location not found.';
+    }
+
+    const hideErrorMessage = () => {
+        errorMessage.style.display = 'none';
+    }
+
     return {
         displayData,
+        displayErrorLocation,
+        hideErrorMessage,
     }
 })();
 

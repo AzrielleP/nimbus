@@ -43,6 +43,15 @@ body {
   justify-content: center;
   margin: 1em;
   opacity: 0.6;
+  p {
+    display: none;
+    margin: 0.5em;
+    padding: 0.5em;
+    background-color: $red;
+    border-radius: 5px;
+    color: $light-orange;
+    font: lighter 0.8em $primary-font;
+  }
   .searchContainer {
     i {
       position: absolute;
@@ -169,7 +178,7 @@ footer {
   margin-top: 1em;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   p {
     font: lighter 0.8em $secondary-font;
     color: $light-orange;
@@ -188,6 +197,10 @@ footer {
     flex-flow: column;
   }
 
+  .inputContainer {
+    flex-flow: column-reverse;
+  }
+
   .mainWeatherDetails {
     .cityAndCountry,
     .weatherDescription {
@@ -204,26 +217,27 @@ footer {
 @media screen and (min-width: 769px) {
   body {
     height: 100vh;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eae2b7+0,f2b374+100 */
-    background: #eae2b7; /* Old browsers */
-    background: -moz-linear-gradient(
-      top,
-      #eae2b7 0%,
-      #f2b374 100%
-    ); /* FF3.6-15 */
-    background: -webkit-linear-gradient(
-      top,
-      #eae2b7 0%,
-      #f2b374 100%
-    ); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(
-      to bottom,
-      #eae2b7 0%,
-      #f2b374 100%
-    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eae2b7', endColorstr='#f2b374',GradientType=0 ); /* IE6-9 */
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eae2b7+0,f2b374+100 */
+        background: #eae2b7; /* Old browsers */
+        background: -moz-linear-gradient(
+          top,
+          #eae2b7 0%,
+          #f2b374 100%
+        ); /* FF3.6-15 */
+        background: -webkit-linear-gradient(
+          top,
+          #eae2b7 0%,
+          #f2b374 100%
+        ); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(
+          to bottom,
+          #eae2b7 0%,
+          #f2b374 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eae2b7', endColorstr='#f2b374',GradientType=0 ); /* IE6-9 */
   }
-  .parentContainer {
+
+  .parentContainer{
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -291,7 +305,6 @@ footer {
       .weatherTemp {
         font-size: 8em;
       }
-      .minAndMaxTemp,
       .feelsLikeTemp {
         font-size: 1.8em;
       }
