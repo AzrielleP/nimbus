@@ -54,6 +54,11 @@ const getData = (() => {
     });
   };
 
+  const onLoad = () => {
+    let weatherData = processWeatherData(getWeatherData('Baguio City', 'metric'));
+    dom.displayData(weatherData);
+  }
+
   const getUserInputCity = () => {
     cityName.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
@@ -67,6 +72,7 @@ const getData = (() => {
   };
 
   return {
+    onLoad,
     getUserInputCity,
   };
 })();
