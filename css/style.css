@@ -60,17 +60,6 @@ body {
   font-weight: lighter;
   font-size: 0.5em;
 }
-.inputContainer input[type=checkbox] {
-  position: absolute;
-  left: -100vw;
-  opacity: 0;
-}
-.inputContainer label {
-  margin-left: 0.5em;
-  font: lighter 1.5em "Roboto", sans-serif;
-  color: #eae2b7;
-  opacity: 0.8;
-}
 
 .mainWeatherDetails {
   margin-bottom: 2em;
@@ -86,6 +75,7 @@ body {
 .mainWeatherDetails .weatherDescription {
   font: bolder 1em "Lato", sans-serif;
   color: #f77f00;
+  text-transform: uppercase;
 }
 .mainWeatherDetails .iconAndTempContainer {
   display: grid;
@@ -96,6 +86,7 @@ body {
   padding: 1.5em;
 }
 .mainWeatherDetails .iconAndTempContainer .weatherIcon {
+  grid-area: 1/1/2/2;
   justify-self: right;
   color: #ffffff;
 }
@@ -103,15 +94,13 @@ body {
   font-size: 8.5em;
 }
 .mainWeatherDetails .iconAndTempContainer .weatherTemp {
+  grid-area: 1/2/2/3;
   font: 6em "Roboto", sans-serif;
   color: #fcbf49;
 }
-.mainWeatherDetails .iconAndTempContainer .minAndMaxTemp {
-  justify-self: right;
-  font: lighter 1.5em "Roboto", sans-serif;
-  color: #d62828;
-}
 .mainWeatherDetails .iconAndTempContainer .feelsLikeTemp {
+  grid-area: 2/1/3/3;
+  justify-self: center;
   font: lighter 1.5em "Lato", sans-serif;
   color: #eae2b7;
 }
@@ -264,8 +253,8 @@ footer p {
   }
   .mainWeatherDetails .weatherDescription {
     grid-area: 2/1/3/2;
-    justify-self: center;
     font-size: 1.5em;
+    align-self: flex-start;
   }
   .mainWeatherDetails .iconAndTempContainer {
     grid-area: 1/2/3/3;

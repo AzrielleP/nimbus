@@ -70,17 +70,6 @@ body {
       font-size: 0.5em;
     }
   }
-  input[type='checkbox'] {
-    position: absolute;
-    left: -100vw;
-    opacity: 0;
-  }
-  label {
-    margin-left: 0.5em;
-    font: lighter 1.5em $primary-font;
-    color: $light-orange;
-    opacity: 0.8;
-  }
 }
 
 .mainWeatherDetails {
@@ -96,6 +85,7 @@ body {
   .weatherDescription {
     font: bolder 1em $secondary-font;
     color: $intense-orange;
+    text-transform: uppercase;
   }
   .iconAndTempContainer {
     display: grid;
@@ -105,6 +95,7 @@ body {
     column-gap: 1em;
     padding: 1.5em;
     .weatherIcon {
+      grid-area: 1/1/2/2;
       justify-self: right;
       color: #ffffff;
       i {
@@ -112,15 +103,13 @@ body {
       }
     }
     .weatherTemp {
+      grid-area: 1/2/2/3;
       font: 6em $primary-font;
       color: $orange;
     }
-    .minAndMaxTemp {
-      justify-self: right;
-      font: lighter 1.5em $primary-font;
-      color: $red;
-    }
     .feelsLikeTemp {
+      grid-area: 2/1/3/3;
+      justify-self: center;
       font: lighter 1.5em $secondary-font;
       color: $light-orange;
     }
@@ -285,8 +274,8 @@ footer {
     }
     .weatherDescription {
       grid-area: 2/1/3/2;
-      justify-self: center;
       font-size: 1.5em;
+      align-self: flex-start;
     }
     .iconAndTempContainer {
       grid-area: 1/2/3/3;
