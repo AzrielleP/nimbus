@@ -41,7 +41,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: 1em;
-  opacity: 0.6;
+  opacity: 0.8;
   p {
     display: none;
     margin: 0.5em;
@@ -60,7 +60,7 @@ body {
     }
     input[type='search'] {
       width: 80%;
-      padding: 0.5em 1em 0.5em 2.5em;
+      padding: 0.5em 0.5em 0.5em 2.5em;
       margin: 0.5em;
       outline: none;
       border: none;
@@ -221,24 +221,24 @@ footer {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eae2b7+0,f2b374+100 */
-    background: #eae2b7; /* Old browsers */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,e8e2c7+100 */
+    background: #ffffff; /* Old browsers */
     background: -moz-linear-gradient(
       top,
-      #eae2b7 0%,
-      #f2b374 100%
+      #ffffff 0%,
+      #e8e2c7 100%
     ); /* FF3.6-15 */
     background: -webkit-linear-gradient(
       top,
-      #eae2b7 0%,
-      #f2b374 100%
+      #ffffff 0%,
+      #e8e2c7 100%
     ); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(
       to bottom,
-      #eae2b7 0%,
-      #f2b374 100%
+      #ffffff 0%,
+      #e8e2c7 100%
     ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eae2b7', endColorstr='#f2b374',GradientType=0 ); /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e2c7',GradientType=0 ); /* IE6-9 */
   }
 
   .parentContainer {
